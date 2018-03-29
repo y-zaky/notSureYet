@@ -19,6 +19,12 @@ class App extends Component {
     }
   }
 
+  componentDidMount () {
+    console.log(url)
+    fetch(url)
+      .then(res => res.json())
+      .then(data => console.log(data))
+  }
   render () {
     return (
       <h1>First React Data App</h1>
