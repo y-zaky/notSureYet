@@ -48,7 +48,7 @@ class App extends Component {
       (repo) => (
         <ul key={repo.id}>
           <li><strong>Name:</strong> <a href={repo.html_url}>{repo.name}</a></li>
-          <li><strong>Description:</strong> {repo.description}</li>
+          <li><strong>Description:</strong> {repo.description ? repo.description : 'Sorry, no description found.'}</li>
           <li><strong>Stars:</strong> {repo.stargazers_count}</li>
         </ul>
       )
