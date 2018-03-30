@@ -15,7 +15,9 @@ class App extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      data: []
+      error: null,
+      isLoaded: false,
+      repos: {items: []}
     }
   }
 
@@ -23,12 +25,43 @@ class App extends Component {
     console.log(url)
     fetch(url)
       .then(res => res.json())
-      .then(data => console.log(data))
+      .then(
+        data => {
+          this.setState({
+            isLoaded: true,
+            repos: data
+          })
+        },
+        error => {
+          this.setState({
+            isLoaded: true,
+            error
+          })
+        }
+      )
   }
   render () {
-    return (
-      <h1>First React Data App</h1>
+    const { error, isLoaded, repos } = this.state
+
+    const repoList = repos.items.map(
+      (repo) => (
+        <ul key={repo.id}>
+          <li><strong>Name:</strong>{repo.name}</li>
+          <li><strong>Description:</strong>{repo.description}</li>
+        </ul>
+      )
     )
+
+    if (!isLoaded) return <h1>Loading....</h1>
+    else if (error) return <h1>Sorry there has been an {error}</h1>
+    else {
+      return (
+        <div>
+          <h1>First React Data App</h1>
+          {repoList}
+        </div>
+      )
+    }
   }
 }
 
