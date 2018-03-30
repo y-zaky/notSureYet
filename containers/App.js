@@ -42,18 +42,20 @@ class App extends Component {
   }
   render () {
     const { error, isLoaded, repos } = this.state
+    console.log(repos.items)
 
     const repoList = repos.items.map(
       (repo) => (
         <ul key={repo.id}>
-          <li><strong>Name:</strong>{repo.name}</li>
-          <li><strong>Description:</strong>{repo.description}</li>
+          <li><strong>Name:</strong> <a href={repo.html_url}>{repo.name}</a></li>
+          <li><strong>Description:</strong> {repo.description}</li>
+          <li><strong>Stars:</strong> {repo.stargazers_count}</li>
         </ul>
       )
     )
 
     if (!isLoaded) return <h1>Loading....</h1>
-    else if (error) return <h1>Sorry there has been an {error}</h1>
+    else if (error) return <h1>Sorry there has been an Error. Message: {error.message}</h1>
     else {
       return (
         <div>
