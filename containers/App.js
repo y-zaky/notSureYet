@@ -22,7 +22,6 @@ class App extends Component {
   }
 
   componentDidMount () {
-    console.log(url)
     fetch(url)
       .then(res => res.json())
       .then(
