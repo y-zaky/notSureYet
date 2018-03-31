@@ -3,7 +3,7 @@ import { LOAD_COMPLETE, FETCH_ERROR, FETCH_SUCCESS } from '../actionTypes'
 const initialState = {
   error: null,
   isLoaded: false,
-  repos: {items: []}
+  repos: []
 }
 
 export default (state = initialState, action) => {
@@ -13,7 +13,7 @@ export default (state = initialState, action) => {
         ...state,
         isLoaded: action.payload
       }
-    case FETCH_ERROR :
+    case FETCH_ERROR:
       return {
         ...state,
         error: action.payload
@@ -21,7 +21,7 @@ export default (state = initialState, action) => {
     case FETCH_SUCCESS:
       return {
         ...state,
-        repos: {items: state.repos.items.concat(action.payload)}
+        repos: state.repos.concat(action.payload)
       }
     default:
       return state

@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 
 import {loadComplete as loadCompleteAction} from '../actions/loadComplete'
 import {fetchError as fetchErrorAction} from '../actions/fetchError'
+import {fetchSuccess as fetchSuccessAction} from '../actions/fetchSuccess'
 
 var date = dateLastWeek()
 var url = 'https://api.github.com/search/repositories?q=created:%3E' + date + '&sort=stars&order=desc'
@@ -23,8 +24,8 @@ class App extends Component {
       .then(res => res.json())
       .then(
         data => {
-          console.log('data', data)
           this.props.loadComplete(true)
+          this.props.fetchSuccess(data)
         },
         error => {
           this.props.fetchError(error)
@@ -47,7 +48,7 @@ class App extends Component {
     // )
 
     if (!this.props.isLoaded) return <h1>Loading....</h1>
-    // else if (error) return <h1>Sorry there has been an Error. Message: {error.message}</h1>
+    else if (this.props.error) return <h1>Sorry there has been an Error. Message: {this.props.error}</h1>
     else {
       return (
         <div>
@@ -60,12 +61,15 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  isLoaded: state.repos.isLoaded
+  isLoaded: state.repos.isLoaded,
+  error: state.repos.error,
+  repos: state.repos.repos
 })
 
 const mapDispatchToProps = {
   loadComplete: loadCompleteAction,
-  fetchError: fetchErrorAction
+  fetchError: fetchErrorAction,
+  fetchSuccess: fetchSuccessAction
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)
