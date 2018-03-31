@@ -1,4 +1,4 @@
-import { LOAD_COMPLETE } from '../actionTypes'
+import { LOAD_COMPLETE, FETCH_ERROR } from '../actionTypes'
 
 const initialState = {
   error: null,
@@ -12,6 +12,11 @@ export default (state = initialState, action) => {
       return {
         ...state,
         isLoaded: action.payload
+      }
+    case FETCH_ERROR :
+      return {
+        ...state,
+        error: action.payload
       }
     default:
       return state
