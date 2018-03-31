@@ -1,4 +1,4 @@
-import { LOAD_COMPLETE, FETCH_ERROR } from '../actionTypes'
+import { LOAD_COMPLETE, FETCH_ERROR, FETCH_SUCCESS } from '../actionTypes'
 
 const initialState = {
   error: null,
@@ -8,7 +8,7 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case LOAD_COMPLETE :
+    case LOAD_COMPLETE:
       return {
         ...state,
         isLoaded: action.payload
@@ -17,6 +17,11 @@ export default (state = initialState, action) => {
       return {
         ...state,
         error: action.payload
+      }
+    case FETCH_SUCCESS:
+      return {
+        ...state,
+        repos: {items: state.repos.items.concat(action.payload)}
       }
     default:
       return state
