@@ -34,26 +34,26 @@ class App extends Component {
   }
   render () {
     console.log('props', this.props)
-    // const { error, isLoaded, repos } = this.state
+    const { error, isLoaded, repos } = this.props
     // console.log(repos.items)
 
-    // const repoList = repos.items.map(
-    //   (repo) => (
-    //     <ul key={repo.id}>
-    //       <li><strong>Name:</strong> <a href={repo.html_url}>{repo.name}</a></li>
-    //       <li><strong>Description:</strong> {repo.description ? repo.description : 'Sorry, no description found.'}</li>
-    //       <li><strong>Stars:</strong> {repo.stargazers_count}</li>
-    //     </ul>
-    //   )
-    // )
+    const repoList = repos.map(
+      (repo) => (
+        <ul key={repo.id}>
+          <li><strong>Name:</strong> <a href={repo.html_url}>{repo.name}</a></li>
+          <li><strong>Description:</strong> {repo.description ? repo.description : 'Sorry, no description found.'}</li>
+          <li><strong>Stars:</strong> {repo.stargazers_count}</li>
+        </ul>
+      )
+    )
 
-    if (!this.props.isLoaded) return <h1>Loading....</h1>
-    else if (this.props.error) return <h1>Sorry there has been an Error. Message: {this.props.error}</h1>
+    if (!isLoaded) return <h1>Loading....</h1>
+    else if (error) return <h1>Sorry there has been an Error. Message: {error}</h1>
     else {
       return (
         <div>
           <h1>First React Data App</h1>
-          {/* {repoList} */}
+          {repoList}
         </div>
       )
     }
