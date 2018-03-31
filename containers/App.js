@@ -3,6 +3,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 
 import {loadComplete as loadCompleteAction} from '../actions/loadComplete'
+import {fetchError as fetchErrorAction} from '../actions/fetchError'
 
 var date = dateLastWeek()
 var url = 'https://api.github.com/search/repositories?q=created:%3E' + date + '&sort=stars&order=desc'
@@ -26,7 +27,7 @@ class App extends Component {
           this.props.loadComplete(true)
         },
         error => {
-          console.log('error in api request it:', error)
+          this.props.fetchError(error)
         }
       )
   }
@@ -63,7 +64,8 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = {
-  loadComplete: loadCompleteAction
+  loadComplete: loadCompleteAction,
+  fetchError: fetchErrorAction
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)
