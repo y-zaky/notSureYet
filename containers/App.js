@@ -1,5 +1,9 @@
 import React, {Component} from 'react'
 
+import connect from 'react-redux'
+
+import {loadComplete as loadCompleteAction} from '../actions/loadComplete'
+
 var date = dateLastWeek()
 var url = 'https://api.github.com/search/repositories?q=created:%3E' + date + '&sort=stars&order=desc'
 
@@ -12,58 +16,53 @@ function dateLastWeek () {
 }
 
 class App extends Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      error: null,
-      isLoaded: false,
-      repos: {items: []}
-    }
-  }
 
   componentDidMount () {
     fetch(url)
       .then(res => res.json())
       .then(
         data => {
-          this.setState({
-            isLoaded: true,
-            repos: data
-          })
+          console.log('data', data)
+          return this.props.loadComplete(true)
         },
         error => {
-          this.setState({
-            isLoaded: true,
-            error
-          })
+          console.log('error in api request it:', error)
         }
       )
   }
   render () {
-    const { error, isLoaded, repos } = this.state
-    console.log(repos.items)
+    // const { error, isLoaded, repos } = this.state
+    // console.log(repos.items)
 
-    const repoList = repos.items.map(
-      (repo) => (
-        <ul key={repo.id}>
-          <li><strong>Name:</strong> <a href={repo.html_url}>{repo.name}</a></li>
-          <li><strong>Description:</strong> {repo.description ? repo.description : 'Sorry, no description found.'}</li>
-          <li><strong>Stars:</strong> {repo.stargazers_count}</li>
-        </ul>
-      )
-    )
+    // const repoList = repos.items.map(
+    //   (repo) => (
+    //     <ul key={repo.id}>
+    //       <li><strong>Name:</strong> <a href={repo.html_url}>{repo.name}</a></li>
+    //       <li><strong>Description:</strong> {repo.description ? repo.description : 'Sorry, no description found.'}</li>
+    //       <li><strong>Stars:</strong> {repo.stargazers_count}</li>
+    //     </ul>
+    //   )
+    // )
 
-    if (!isLoaded) return <h1>Loading....</h1>
-    else if (error) return <h1>Sorry there has been an Error. Message: {error.message}</h1>
-    else {
+    // if (!isLoaded) return <h1>Loading....</h1>
+    // else if (error) return <h1>Sorry there has been an Error. Message: {error.message}</h1>
+    // else {
       return (
         <div>
           <h1>First React Data App</h1>
-          {repoList}
+          {/* {repoList} */}
         </div>
       )
-    }
+    // }
   }
 }
 
-export default App
+const mapStateToProps = (state) => ({
+  isLoaded: state.repos.isLoaded
+})
+
+const mapDispatchToProps = {
+  loadComplete: loadCompleteAction
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
