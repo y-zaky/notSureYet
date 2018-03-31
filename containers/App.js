@@ -45,16 +45,16 @@ class App extends Component {
     //   )
     // )
 
-    // if (!isLoaded) return <h1>Loading....</h1>
+    if (!this.props.isLoaded) return <h1>Loading....</h1>
     // else if (error) return <h1>Sorry there has been an Error. Message: {error.message}</h1>
-    // else {
+    else {
       return (
         <div>
           <h1>First React Data App</h1>
           {/* {repoList} */}
         </div>
       )
-    // }
+    }
   }
 }
 
