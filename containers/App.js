@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-import connect from 'react-redux'
+import {connect} from 'react-redux'
 
 import {loadComplete as loadCompleteAction} from '../actions/loadComplete'
 
@@ -23,7 +23,7 @@ class App extends Component {
       .then(
         data => {
           console.log('data', data)
-          return this.props.loadComplete(true)
+          this.props.loadComplete(true)
         },
         error => {
           console.log('error in api request it:', error)
@@ -31,6 +31,7 @@ class App extends Component {
       )
   }
   render () {
+    console.log('props', this.props)
     // const { error, isLoaded, repos } = this.state
     // console.log(repos.items)
 
