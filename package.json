@@ -14,6 +14,7 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",
+    "react-select": "^1.2.1",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
     "webpack": "^4.2.0",
@@ -40,8 +41,8 @@
     "presets": [
       "env",
       "react",
-      "stage-0",
-      "es2015"
+      "es2015",
+      "stage-0"
     ],
     "plugins": [
       "transform-object-rest-spread"

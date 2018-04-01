@@ -46,7 +46,7 @@ class App extends Component {
         <div>
           <h1>First React Data App</h1>
           <RepoList data={repos} />
-          <FilterDropdown />
+          <FilterDropdown data={repos} />
         </div>
       )
     }
