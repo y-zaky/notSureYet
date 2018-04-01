@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 
 // Components
 import RepoList from '../components/repoList'
+import FilterDropdown from '../components/filterDropdown'
 
 // Actions
 import {loadComplete as loadCompleteAction} from '../actions/loadComplete'
@@ -45,6 +46,7 @@ class App extends Component {
         <div>
           <h1>First React Data App</h1>
           <RepoList data={repos} />
+          <FilterDropdown />
         </div>
       )
     }
