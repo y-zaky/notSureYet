@@ -18,19 +18,29 @@ export default class FilterDropdown extends Component {
   }
 
   extractLanguages = (repoData) => {
-    const allRepoLanguages = repoData.map(repo => repo.language);
-    const reducedRepoLanguages = allRepoLanguages.reduce(
-    (allLanguages, currentLanguage ) => {
-      if (allLanguages.indexOf(currentLanguage) < 0 && currentLanguage !== null) allLanguages.push(currentLanguage) 
-      return allLanguages
-    } 
-  , [] )
-  return reducedRepoLanguages
-  console.log("reducedRepoLanguages", reducedRepoLanguages)
+      const allRepoLanguages = repoData.map(repo => repo.language);
+      const reducedRepoLanguages = allRepoLanguages.reduce(
+        (allLanguages, currentLanguage ) => {
+          if (allLanguages.indexOf(currentLanguage) < 0 && currentLanguage !== null) allLanguages.push(currentLanguage) 
+          return allLanguages
+        } 
+        , []
+      )
+      //Place languages in correctly formatted object for options property binding in Select Component.
+      const languageDropdownObj = reducedRepoLanguages.reduce(
+        (allLanguages, currentLanguage)  => {
+          allLanguages.push({
+            value: currentLanguage,
+            label: currentLanguage
+          })
+          return allLanguages
+        }, []
+      )
+    
+    return languageDropdownObj
   }
   
   render() {
-    console.log('filterdropdowndata',this.props.data)
 
     console.log('extract function', this.extractLanguages(this.props.data) )
 
@@ -43,10 +53,7 @@ export default class FilterDropdown extends Component {
         value={value}
         placeholder={'Programming Language'}
         onChange={this.handleChange}
-        options={[
-          { value: 'one', label: 'One' },
-          { value: 'two', label: 'Two' },
-        ]}
+        options={this.extractLanguages(this.props.data)}
       />
     );
   }
