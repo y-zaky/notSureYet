@@ -44,9 +44,9 @@ class App extends Component {
     else {
       return (
         <div>
-          <h1>First React Data App</h1>
-          <RepoList data={repos} />
+          <h1>Whats Poppin?</h1>
           <FilterDropdown data={repos} />
+          <RepoList data={repos} />
         </div>
       )
     }
