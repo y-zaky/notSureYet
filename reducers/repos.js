@@ -1,4 +1,4 @@
-import { LOAD_COMPLETE, FETCH_ERROR, FETCH_SUCCESS } from '../actionTypes'
+import { LOAD_COMPLETE, FETCH_ERROR, FETCH_SUCCESS, FILTER_REPOS } from '../actionTypes'
 
 const initialState = {
   error: null,
@@ -23,6 +23,11 @@ export default (state = initialState, action) => {
         ...state,
         repos: state.repos.concat(action.payload)
       }
+    // case FILTER_REPOS:
+    //   return {
+    //     ...state,
+    //     repos: state.repos.map( repo => repo.language === action.payload )
+    //   }
     default:
       return state
   }

@@ -38,11 +38,14 @@ class App extends Component {
   }
 
   filterLanguage (language) {
-    console.log('filter Language called')
+    console.log('filter Language called with language:', language.value)
+    console.log('props', this.props)
+    //TO DO - THIS .PROPS BELOW IS UNDEFINED . ALSO UNCOMMENT OUT REDUCER CODE THAT FILTERS THE REPOS. 
+    this.props.filterRepos(language)
   }
 
   render () {
-    console.log('props', this.props)
+    
     const { error, isLoaded, repos } = this.props
     
     if (!isLoaded) return <h1>Loading....</h1>
