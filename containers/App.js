@@ -35,6 +35,11 @@ class App extends Component {
         }
       )
   }
+
+  filterLanguage () {
+    console.log('filter Language called')
+  }
+
   render () {
     console.log('props', this.props)
     const { error, isLoaded, repos } = this.props
@@ -45,7 +50,7 @@ class App extends Component {
       return (
         <div>
           <h1>Whats Poppin?</h1>
-          <FilterDropdown data={repos} />
+          <FilterDropdown filterLanguage={this.filterLanguage}  data={repos} />
           <RepoList data={repos} />
         </div>
       )

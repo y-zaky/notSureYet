@@ -15,6 +15,7 @@ export default class FilterDropdown extends Component {
   handleChange = (selectedOption) => {
     this.setState({ selectedOption });
     console.log(`Selected: ${selectedOption.label}`);
+    this.props.filterLanguage();
   }
 
   extractLanguages = (repoData) => {
@@ -42,7 +43,7 @@ export default class FilterDropdown extends Component {
   
   render() {
 
-    console.log('extract function', this.extractLanguages(this.props.data) )
+    console.log('filterDropdown Props', this.props )
 
     const { selectedOption } = this.state;
     const value = selectedOption && selectedOption.value;
