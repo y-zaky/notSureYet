@@ -9,6 +9,7 @@ import FilterDropdown from '../components/filterDropdown'
 import {loadComplete as loadCompleteAction} from '../actions/loadComplete'
 import {fetchError as fetchErrorAction} from '../actions/fetchError'
 import {fetchSuccess as fetchSuccessAction} from '../actions/fetchSuccess'
+import {filterRepos as filterReposAction} from '../actions/filterRepos'
 
 var date = dateLastWeek()
 var url = 'https://api.github.com/search/repositories?q=created:%3E' + date + '&sort=stars&order=desc'
@@ -36,7 +37,7 @@ class App extends Component {
       )
   }
 
-  filterLanguage () {
+  filterLanguage (language) {
     console.log('filter Language called')
   }
 
@@ -67,7 +68,8 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = {
   loadComplete: loadCompleteAction,
   fetchError: fetchErrorAction,
-  fetchSuccess: fetchSuccessAction
+  fetchSuccess: fetchSuccessAction,
+  filterRepos: filterReposAction
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)
