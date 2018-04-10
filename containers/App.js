@@ -33,8 +33,8 @@ class App extends Component {
   filterLanguage (language) {
     console.log('filter Language called with language:', language.value)
     console.log('props in App', this.props)
-    //TO DO - THIS .PROPS BELOW IS UNDEFINED . ALSO UNCOMMENT OUT REDUCER CODE THAT FILTERS THE REPOS. 
-    this.props.filterRepos(language)
+    //TO DO - When language is filtered, dropdown options change. filter must be new place in redux store?
+    this.props.filterRepos(language.value)
   }
   
   componentDidMount () {

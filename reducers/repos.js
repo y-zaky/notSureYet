@@ -23,11 +23,11 @@ export default (state = initialState, action) => {
         ...state,
         repos: state.repos.concat(action.payload)
       }
-    // case FILTER_REPOS:
-    //   return {
-    //     ...state,
-    //     repos: state.repos.map( repo => repo.language === action.payload )
-    //   }
+    case FILTER_REPOS:
+      return {
+        ...state,
+        repos: state.repos.filter( repo => repo.language === action.payload )
+      }
     default:
       return state
   }
