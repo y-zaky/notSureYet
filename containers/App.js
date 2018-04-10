@@ -23,6 +23,20 @@ function dateLastWeek () {
 }
 
 class App extends Component {
+
+  constructor(props){
+    super(props)
+
+    this.filterLanguage = this.filterLanguage.bind(this)
+  }
+
+  filterLanguage (language) {
+    console.log('filter Language called with language:', language.value)
+    console.log('props in App', this.props)
+    //TO DO - THIS .PROPS BELOW IS UNDEFINED . ALSO UNCOMMENT OUT REDUCER CODE THAT FILTERS THE REPOS. 
+    this.props.filterRepos(language)
+  }
+  
   componentDidMount () {
     fetch(url)
       .then(res => res.json())
@@ -37,15 +51,10 @@ class App extends Component {
       )
   }
 
-  filterLanguage (language) {
-    console.log('filter Language called with language:', language.value)
-    console.log('props', this.props)
-    //TO DO - THIS .PROPS BELOW IS UNDEFINED . ALSO UNCOMMENT OUT REDUCER CODE THAT FILTERS THE REPOS. 
-    this.props.filterRepos(language)
-  }
+ 
 
-  render () {
-    
+  render () {    
+    console.log('props IN RENDER', this.props)
     const { error, isLoaded, repos } = this.props
     
     if (!isLoaded) return <h1>Loading....</h1>
