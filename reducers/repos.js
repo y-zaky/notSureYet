@@ -3,7 +3,8 @@ import { LOAD_COMPLETE, FETCH_ERROR, FETCH_SUCCESS, FILTER_REPOS } from '../acti
 const initialState = {
   error: null,
   isLoaded: false,
-  repos: []
+  repos: [],
+  renderedRepos: []
 }
 
 export default (state = initialState, action) => {
@@ -26,7 +27,7 @@ export default (state = initialState, action) => {
     case FILTER_REPOS:
       return {
         ...state,
-        repos: state.repos.filter( repo => repo.language === action.payload )
+        renderedRepos: state.repos.filter( repo => repo.language === action.payload )
       }
     default:
       return state
