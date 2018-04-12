@@ -27,7 +27,7 @@ export default class FilterDropdown extends Component {
         } 
         , []
       )
-      //Place languages in correctly formatted object for options property binding in Select Component.
+      //Place languages in correctly formatted object for options property binding in Select Component and add Select All.
       const languageDropdownObj = reducedRepoLanguages.reduce(
         (allLanguages, currentLanguage)  => {
           allLanguages.push({
@@ -37,7 +37,10 @@ export default class FilterDropdown extends Component {
           return allLanguages
         }, []
       )
-    
+    languageDropdownObj.unshift({
+      value: "Select All",
+      label: "Select All"
+    })
     return languageDropdownObj
   }
   

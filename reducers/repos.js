@@ -26,7 +26,15 @@ export default (state = initialState, action) => {
         renderedRepos: state.repos.concat(action.payload)
       }
     case FILTER_REPOS:
-      return {
+      console.log('action PAYLOAD', action.payload);
+      if (action.payload === "Select All") {
+        return {
+          ...state,
+          repos: state.repos.concat(action.payload),
+          renderedRepos: state.repos.concat(action.payload)
+        }
+      }
+     else return {
         ...state,
         renderedRepos: state.repos.filter( repo => repo.language === action.payload )
       }
