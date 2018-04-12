@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 
 export default class RepoList extends Component {
   render () {
+    console.log('repo list data', this.props.data)
     const repoList = this.props.data.map(
       (repo) => (
         <ul key={repo.id}>

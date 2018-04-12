@@ -22,7 +22,8 @@ export default (state = initialState, action) => {
     case FETCH_SUCCESS:
       return {
         ...state,
-        repos: state.repos.concat(action.payload)
+        repos: state.repos.concat(action.payload),
+        renderedRepos: state.repos.concat(action.payload)
       }
     case FILTER_REPOS:
       return {
