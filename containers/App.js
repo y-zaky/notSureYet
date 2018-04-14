@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+//styles
+import '../components/styles/styles.css'
 
 // Components
 import RepoList from '../components/repoList'
