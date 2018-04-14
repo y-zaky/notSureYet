@@ -1,14 +1,33 @@
-* {
+/* * {
 background-color:#F1F1F1F1;
-}
+} */
 
-.loading-boy {
+.loading__boy {
     animation-name: spin;
     animation-duration: 2000ms;
     animation-iteration-count: infinite;
     animation-timing-function: ease; 
     height: 150px;
     width: 100px;
+}
+
+/* .loading__popcornTub{
+    height: 30px;
+    width: 30px;
+    animation-name: pop;
+    animation-duration: 3000ms;
+    animation-iteration-count: infinite;
+    transform-origin: 100px 10px
+} */
+
+
+@keyframes pop {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(180deg);
+    }
 }
 
 @keyframes spin {
