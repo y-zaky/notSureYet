@@ -60,17 +60,18 @@ class App extends Component {
     console.log('props IN RENDER', this.props)
     const { error, isLoaded, repos, renderedRepos } = this.props
     
-    if (!isLoaded) return <Loading />
-    else if (error) return <h1>Sorry there has been an Error. Message: {error}</h1>
-    else {
-      return (
-        <div>
-          <h1>Whats Poppin?</h1>
-          <FilterDropdown filterLanguage={this.filterLanguage}  data={repos} />
-          <RepoList data={renderedRepos} />
-        </div>
-      )
-    }
+    // if (!isLoaded) return <Loading />
+    return <Loading />
+    // else if (error) return <h1>Sorry there has been an Error. Message: {error}</h1>
+    // else {
+    //   return (
+    //     <div>
+    //       <h1>Whats Poppin?</h1>
+    //       <FilterDropdown filterLanguage={this.filterLanguage}  data={repos} />
+    //       <RepoList data={renderedRepos} />
+    //     </div>
+    //   )
+    // }
   }
 }
 
