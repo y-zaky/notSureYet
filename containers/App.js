@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 // Components
 import RepoList from '../components/repoList'
 import FilterDropdown from '../components/filterDropdown'
+import Loading from '../components/loading'
 
 // Actions
 import {loadComplete as loadCompleteAction} from '../actions/loadComplete'
@@ -32,7 +33,8 @@ class App extends Component {
 
   filterLanguage (language) {
     console.log('filter Language called with language:', language.value)
-    //TO DO - When language is filtered, dropdown options change. filter must be new place in redux store?
+    //TO DO - Create saving via local storage/ or via api ?
+    // Think about cool loading start page? 
     this.props.filterRepos(language.value)
   }
   
@@ -56,7 +58,7 @@ class App extends Component {
     console.log('props IN RENDER', this.props)
     const { error, isLoaded, repos, renderedRepos } = this.props
     
-    if (!isLoaded) return <h1>Loading....</h1>
+    if (!isLoaded) return <Loading />
     else if (error) return <h1>Sorry there has been an Error. Message: {error}</h1>
     else {
       return (
