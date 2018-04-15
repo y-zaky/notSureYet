@@ -44,7 +44,8 @@ class App extends Component {
 
   starRepo (repo) {
     console.log('starRepo Clicked')
-    
+    console.log('starRepo Repo', repo)  
+    this.props.starRepo(repo)
   }
   
   componentDidMount () {
