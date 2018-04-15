@@ -39,6 +39,10 @@ class App extends Component {
     // Think about cool loading start page? 
     this.props.filterRepos(language.value)
   }
+
+  starRepo (repo) {
+    console.log('starRepo Clicked')
+  }
   
   componentDidMount () {
     const getData = () => {
@@ -70,7 +74,7 @@ class App extends Component {
         <div>
           <h1>Whats Poppin?</h1>
           <FilterDropdown filterLanguage={this.filterLanguage}  data={repos} />
-          <RepoList data={renderedRepos} />
+          <RepoList starRepo={this.starRepo} data={renderedRepos} />
         </div>
       )
     }
