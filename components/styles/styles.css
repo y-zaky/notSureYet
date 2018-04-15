@@ -14,6 +14,11 @@ background-color:#F1F1F1F1;
     width: 100px;
 }
 
+.loading__title {
+    text-align: center;
+    animation-name: slideDown;
+    animation-duration: 1000ms;
+}
 
 .loading__boy {
     animation-name: spin;
@@ -42,5 +47,14 @@ background-color:#F1F1F1F1;
     }
     to {
         transform:rotate(360deg);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform:translateY(-350%);
+    }
+    to {
+        transform:translateY(0%);
     }
 }

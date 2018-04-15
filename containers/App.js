@@ -63,7 +63,6 @@ class App extends Component {
   render () {    
     console.log('props IN RENDER', this.props)
     const { error, isLoaded, repos, renderedRepos } = this.props
-    
     if (!isLoaded) return <Loading />
     else if (error) return <h1>Sorry there has been an Error. Message: {error}</h1>
     else {
@@ -77,6 +76,8 @@ class App extends Component {
     }
   }
 }
+
+// return <Loading />
 
 const mapStateToProps = (state) => ({
   isLoaded: state.repos.isLoaded,
