@@ -31,6 +31,7 @@ class App extends Component {
     super(props)
 
     this.filterLanguage = this.filterLanguage.bind(this)
+    this.starRepo = this.starRepo.bind(this)
   }
 
   filterLanguage (language) {
