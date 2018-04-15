@@ -13,6 +13,7 @@ import {loadComplete as loadCompleteAction} from '../actions/loadComplete'
 import {fetchError as fetchErrorAction} from '../actions/fetchError'
 import {fetchSuccess as fetchSuccessAction} from '../actions/fetchSuccess'
 import {filterRepos as filterReposAction} from '../actions/filterRepos'
+import {starRepo as starRepoAction} from '../actions/starRepo'
 
 var date = dateLastWeek()
 var url = 'https://api.github.com/search/repositories?q=created:%3E' + date + '&sort=stars&order=desc'
@@ -43,6 +44,7 @@ class App extends Component {
 
   starRepo (repo) {
     console.log('starRepo Clicked')
+    
   }
   
   componentDidMount () {
@@ -95,7 +97,8 @@ const mapDispatchToProps = {
   loadComplete: loadCompleteAction,
   fetchError: fetchErrorAction,
   fetchSuccess: fetchSuccessAction,
-  filterRepos: filterReposAction
+  filterRepos: filterReposAction,
+  starRepo: starRepoAction
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)
