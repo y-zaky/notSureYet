@@ -7,6 +7,24 @@ background-color:#F1F1F1F1;
     justify-content: space-between;
 }
 
+.basket__popcornImage {
+    width: 70px;
+    height: 70px; 
+    position: relative;
+}
+
+.basket__container {
+    position: relative;
+}
+
+.basket__counter {
+    position: absolute;
+    left: 32px;
+    top: 35px;
+    bottom: 35px;
+    margin: 0;
+}
+
 .loading__container--outer {
     display: flex;
     flex-direction: column;
