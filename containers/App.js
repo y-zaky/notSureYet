@@ -41,17 +41,21 @@ class App extends Component {
   }
   
   componentDidMount () {
-    fetch(url)
-      .then(res => res.json())
-      .then(
-        data => {
-          this.props.loadComplete(true)
-          this.props.fetchSuccess(data)
-        },
-        error => {
-          this.props.fetchError(error)
-        }
-      )
+    const getData = () => {
+      fetch(url)
+        .then(res => res.json())
+        .then(
+          data => {
+            this.props.loadComplete(true)
+            this.props.fetchSuccess(data)
+          },
+          error => {
+            this.props.fetchError(error)
+          }
+        )
+    }
+      //1.1 seconds for users to see loading.
+      setTimeout( getData, 1100)
   }
 
  
@@ -60,18 +64,17 @@ class App extends Component {
     console.log('props IN RENDER', this.props)
     const { error, isLoaded, repos, renderedRepos } = this.props
     
-    // if (!isLoaded) return <Loading />
-    return <Loading />
-    // else if (error) return <h1>Sorry there has been an Error. Message: {error}</h1>
-    // else {
-    //   return (
-    //     <div>
-    //       <h1>Whats Poppin?</h1>
-    //       <FilterDropdown filterLanguage={this.filterLanguage}  data={repos} />
-    //       <RepoList data={renderedRepos} />
-    //     </div>
-    //   )
-    // }
+    if (!isLoaded) return <Loading />
+    else if (error) return <h1>Sorry there has been an Error. Message: {error}</h1>
+    else {
+      return (
+        <div>
+          <h1>Whats Poppin?</h1>
+          <FilterDropdown filterLanguage={this.filterLanguage}  data={repos} />
+          <RepoList data={renderedRepos} />
+        </div>
+      )
+    }
   }
 }
 

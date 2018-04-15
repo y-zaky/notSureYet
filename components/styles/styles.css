@@ -2,6 +2,19 @@
 background-color:#F1F1F1F1;
 } */
 
+.loading__container--outer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4rem;
+}
+
+.loading__container--inner {
+    position: relative;
+    width: 100px;
+}
+
+
 .loading__boy {
     animation-name: spin;
     animation-duration: 2000ms;
@@ -12,19 +25,6 @@ background-color:#F1F1F1F1;
     position: relative;
 }
 
-/* .loading__popcornTub{
-    height: 30px;
-    width: 30px;
-    animation-name: pop;
-    animation-duration: 3000ms;
-    animation-iteration-count: infinite;
-    transform-origin: 100px 10px
-} */
-
-.loading {
-    position: relative;
-    width: 100px;
-}
 
 
 @keyframes pop {
