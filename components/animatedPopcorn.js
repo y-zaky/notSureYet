@@ -24,7 +24,7 @@ export default class AnimatedPopcorn extends Component {
 
     render () {
         return (
-                <img className='loading__popcornTub' 
+                <img className='loading__popcorn' 
                     src={popcornCloud} 
                     style= { {
                         height: "30px",

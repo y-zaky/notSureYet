@@ -7,6 +7,7 @@ import '../components/styles/styles.css'
 import RepoList from '../components/repoList'
 import FilterDropdown from '../components/filterDropdown'
 import Loading from '../components/loading'
+import PopBasket from '../components/popBasket'
 
 // Actions
 import {loadComplete as loadCompleteAction} from '../actions/loadComplete'
@@ -38,7 +39,9 @@ class App extends Component {
   filterLanguage (language) {
     console.log('filter Language called with language:', language.value)
     //TO DO - Create saving via local storage/ or via api ?
-    // Think about cool loading start page? 
+    // TO . build a 'basket' for repos that have been started.
+    // add animation everytime someone stars repo.
+    //allow people to tick repo to add, and click again to remove
     this.props.filterRepos(language.value)
   }
 
@@ -76,7 +79,10 @@ class App extends Component {
     else {
       return (
         <div>
-          <h1>Whats Poppin?</h1>
+          <div className="nav__container">
+            <h1>Whats Poppin?</h1>
+            <PopBasket starredRepos={this.props.starredRepos}/>
+          </div>
           <FilterDropdown filterLanguage={this.filterLanguage}  data={repos} />
           <RepoList starRepo={this.starRepo} data={renderedRepos} />
         </div>
