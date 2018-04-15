@@ -91,7 +91,8 @@ const mapStateToProps = (state) => ({
   isLoaded: state.repos.isLoaded,
   error: state.repos.error,
   repos: state.repos.repos,
-  renderedRepos: state.repos.renderedRepos
+  renderedRepos: state.repos.renderedRepos,
+  starredRepos: state.repos.starredRepos
 })
 
 const mapDispatchToProps = {

@@ -1,10 +1,11 @@
-import { LOAD_COMPLETE, FETCH_ERROR, FETCH_SUCCESS, FILTER_REPOS } from '../actionTypes'
+import { LOAD_COMPLETE, FETCH_ERROR, FETCH_SUCCESS, FILTER_REPOS, STAR_REPO } from '../actionTypes'
 
 const initialState = {
   error: null,
   isLoaded: false,
   repos: [],
-  renderedRepos: []
+  renderedRepos: [],
+  starredRepos: []
 }
 
 export default (state = initialState, action) => {
@@ -24,6 +25,11 @@ export default (state = initialState, action) => {
         ...state,
         repos: state.repos.concat(action.payload),
         renderedRepos: state.repos.concat(action.payload)
+      }
+    case STAR_REPO:
+      return {
+        ...state,
+        starredRepos: state.starredRepos.concat(action.payload)
       }
     case FILTER_REPOS:
       console.log('action PAYLOAD', action.payload);
