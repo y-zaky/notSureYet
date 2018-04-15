@@ -17,7 +17,7 @@ background-color:#F1F1F1F1;
 .loading__title {
     text-align: center;
     animation-name: slideDown;
-    animation-duration: 1000ms;
+    animation-duration: 1500ms;
 }
 
 .loading__boy {
@@ -51,10 +51,7 @@ background-color:#F1F1F1F1;
 }
 
 @keyframes slideDown {
-    from {
-        transform:translateY(-350%);
-    }
-    to {
-        transform:translateY(0%);
-    }
+    0% {transform:translateY(-350%);}
+    85% {transform:translateY(0%);}
+    100% { transform: scale(1.1);}
 }
