@@ -21,12 +21,18 @@ export default class Loading extends Component {
 
     render () {
         return (
-            <div className ="loading">
+            <div>
                 <h1>Loading...</h1>
-                <img className='loading__boy' src={boyPopcorn} />
-                <AnimatedPopcorn /> 
-                <AnimatedPopcorn />     
-                <AnimatedPopcorn />   
+                <div className ="loading">
+                    <img className='loading__boy' src={boyPopcorn} />
+                    <AnimatedPopcorn /> 
+                    <AnimatedPopcorn />     
+                    <AnimatedPopcorn /> 
+                    <AnimatedPopcorn />   
+                    <AnimatedPopcorn />   
+                    <AnimatedPopcorn />   
+                    <AnimatedPopcorn />     
+                </div>
             </div>
         )
     }

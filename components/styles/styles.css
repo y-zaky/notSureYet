@@ -9,6 +9,7 @@ background-color:#F1F1F1F1;
     animation-timing-function: ease; 
     height: 150px;
     width: 100px;
+    position: relative;
 }
 
 /* .loading__popcornTub{
@@ -19,6 +20,11 @@ background-color:#F1F1F1F1;
     animation-iteration-count: infinite;
     transform-origin: 100px 10px
 } */
+
+.loading {
+    position: relative;
+    width: 100px;
+}
 
 
 @keyframes pop {
