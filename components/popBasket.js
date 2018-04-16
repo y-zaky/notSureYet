@@ -38,10 +38,9 @@ export default class PopBasket extends Component {
             >
                 <img className="basket__popcornImage" src={popcornTub} />
                 <p className="basket__counter">{this.props.starredRepos.length}</p>
-                {this.state.isHovering && 
+                {this.state.isHovering && this.props.starredRepos.length > 0 && 
                     <div>
-                        <BasketPreview />
-                        <h1>{String(this.state.isHovering)}</h1>
+                        <BasketPreview starredRepos={this.props.starredRepos}/>
                     </div>
                 }
             </div>
