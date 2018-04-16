@@ -1,6 +1,12 @@
 import React, {Component} from 'react'
 
+//images
 import popcornTub from './images/popcornTub.png'
+
+//components
+import BasketPreview from './basketPreview'
+
+
 
 export default class PopBasket extends Component {
 
@@ -32,7 +38,12 @@ export default class PopBasket extends Component {
             >
                 <img className="basket__popcornImage" src={popcornTub} />
                 <p className="basket__counter">{this.props.starredRepos.length}</p>
-                <h1>{String(this.state.isHovering)}</h1>
+                {this.state.isHovering && 
+                    <div>
+                        <BasketPreview />
+                        <h1>{String(this.state.isHovering)}</h1>
+                    </div>
+                }
             </div>
         )
     }
