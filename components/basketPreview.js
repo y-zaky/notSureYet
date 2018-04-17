@@ -8,8 +8,8 @@ export default class BasketPreview extends Component {
     render() {
         let starredRepos = this.props.starredRepos.map(
             (repo) => (
-                <ul className={"basketPreview__repoContianer"} key={repo.id}>
-                    <li>{repo.name}</li> 
+                <ul className={"basketPreview__repoContianer--ul"} key={repo.id}>
+                    <strong><li>{repo.name}</li></strong>
                     <li>{repo.language || "Language Unknown"}</li>
                 </ul>
             )

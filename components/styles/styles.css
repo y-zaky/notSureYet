@@ -26,6 +26,22 @@ background-color:#F1F1F1F1;
     margin: 0;
 }
 
+.basketPreview__repoContianer {
+    position: absolute;
+    background-color: #F1F1F1;
+    border: 2px solid grey;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    right: 0px;
+}
+
+.basketPreview__repoContianer--ul {
+    list-style-type: none;
+    margin: 0px 0px 5px 0px;
+    padding: 15px;
+}
+
 .Select{
     width: 25%;
 }
