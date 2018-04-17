@@ -34,6 +34,8 @@ background-color:#F1F1F1F1;
     display: flex;
     flex-direction: column;
     right: 0px;
+    animation-name: fadeIn;
+    animation-duration: 500ms;
 }
 
 .basketPreview__repoContianer--ul {
@@ -60,7 +62,7 @@ background-color:#F1F1F1F1;
 .loading__title {
     text-align: center;
     animation-name: slideDown;
-    animation-duration: 1500ms;
+    animation-duration: 500ms;
 }
 
 .loading__boy {
@@ -108,4 +110,9 @@ background-color:#F1F1F1F1;
     0% {transform:translateY(-350%);}
     85% {transform:translateY(0%);}
     100% { transform: scale(1.1);}
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+    to   { opacity: 1; }
 }
