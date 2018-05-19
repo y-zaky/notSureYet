@@ -6,7 +6,7 @@ export default class RepoList extends Component {
 
   render () {
     const repoList = this.props.data.map(
-      (repo) => < RepoListItem starRepo={this.props.starRepo} data={repo}/>
+      (repo) => < RepoListItem unStarRepo={this.props.unStarRepo} starRepo={this.props.starRepo} data={repo}/>
     )
     
     return repoList

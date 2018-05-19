@@ -15,6 +15,7 @@ import {fetchError as fetchErrorAction} from '../actions/fetchError'
 import {fetchSuccess as fetchSuccessAction} from '../actions/fetchSuccess'
 import {filterRepos as filterReposAction} from '../actions/filterRepos'
 import {starRepo as starRepoAction} from '../actions/starRepo'
+import {unStarRepo as unStarRepoAction} from '../actions/unStarRepo'
 
 var date = dateLastWeek()
 var url = 'https://api.github.com/search/repositories?q=created:%3E' + date + '&sort=stars&order=desc'
@@ -47,6 +48,10 @@ class App extends Component {
 
   starRepo (repo) {
     this.props.starRepo(repo)
+  }
+
+  unStarRepo (repo) {
+    this.props.unStarRepo(repo)
   }
   
   componentDidMount () {
@@ -81,7 +86,7 @@ class App extends Component {
             <PopBasket starredRepos={this.props.starredRepos}/>
           </div>
           <FilterDropdown filterLanguage={this.filterLanguage}  data={repos} />
-          <RepoList starRepo={this.starRepo} data={renderedRepos} />
+          <RepoList unStarRepo={this.unStarRepo} starRepo={this.starRepo} data={renderedRepos} />
         </div>
       )
     }
@@ -103,7 +108,8 @@ const mapDispatchToProps = {
   fetchError: fetchErrorAction,
   fetchSuccess: fetchSuccessAction,
   filterRepos: filterReposAction,
-  starRepo: starRepoAction
+  starRepo: starRepoAction,
+  unStarRepo: unStarRepoAction
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)
