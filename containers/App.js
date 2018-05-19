@@ -46,8 +46,6 @@ class App extends Component {
   }
 
   starRepo (repo) {
-    console.log('starRepo Clicked')
-    console.log('starRepo Repo', repo)  
     this.props.starRepo(repo)
   }
   
@@ -72,7 +70,6 @@ class App extends Component {
  
 
   render () {    
-    console.log('props IN RENDER', this.props)
     const { error, isLoaded, repos, renderedRepos } = this.props
     if (!isLoaded) return <Loading />
     else if (error) return <h1>Sorry there has been an Error. Message: {error}</h1>

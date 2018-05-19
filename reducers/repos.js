@@ -27,6 +27,7 @@ export default (state = initialState, action) => {
         renderedRepos: state.repos.concat(action.payload)
       }
     case STAR_REPO:
+    if (state.starredRepos.includes(action.payload)) return state
       return {
         ...state,
         starredRepos: state.starredRepos.concat(action.payload)
