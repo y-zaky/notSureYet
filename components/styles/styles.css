@@ -87,6 +87,13 @@ background-color:#F1F1F1F1;
     list-style-type: none;
 }
 
+ .repolist__item--starred{
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    background-color: #F1F1F1;
+ }
+
 
 @keyframes pop {
     from {
