@@ -6,7 +6,7 @@ export default class RepoListItem extends Component {
     constructor (props) {
         super(props)
         this.state = {
-            isStarred: false
+            isStarred: false,
           }  
     }
 
@@ -17,8 +17,18 @@ export default class RepoListItem extends Component {
 
     render () {
         console.log('PROPZ', this.props)
-        const starButton = this.state.isStarred ? <img className="repolist__popcornImage" onClick={() => {this.props.unStarRepo(this.props.data) ; this.toggleStarredState() }} src={popcornCloud}/>
-        : <img className="repolist__popcornImage" onClick={() => {this.props.starRepo(this.props.data); this.toggleStarredState() }} src={popcornCloud}/>
+        const starButton = this.state.isStarred ? 
+            <img 
+                className="repolist__popcornImage--starred" 
+                onClick={() => {this.props.unStarRepo(this.props.data) ; this.toggleStarredState() }} 
+                src={popcornCloud}
+            />
+        : 
+            <img 
+                className="repolist__popcornImage" 
+                onClick={() => {this.props.starRepo(this.props.data); this.toggleStarredState() }}
+                src={popcornCloud}
+            />
 
 
     return (

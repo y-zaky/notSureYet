@@ -43,7 +43,7 @@ class App extends Component {
     //TO DO - Create saving via local storage/ or via api ?
     // CSS for basket previews, and when you click it a new page opens. 
     // add animation everytime someone stars repo.
-    //allow people to tick repo to add, and click again to remove
+    
     this.props.filterRepos(language.value)
   }
 
