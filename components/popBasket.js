@@ -36,8 +36,8 @@ export default class PopBasket extends Component {
              onMouseEnter={this.handleMouseHover}
              onMouseLeave={this.handleMouseHover}
             >
+            <p className="basket__counter">{this.props.starredRepos.length} Repos Poppin'</p>
                 <img className="basket__popcornImage" src={popcornTub} />
-                <p className="basket__counter">{this.props.starredRepos.length}</p>
                 {this.state.isHovering && this.props.starredRepos.length > 0 && 
                     <div className="basketPreview__repoContianer">
                         <BasketPreview starredRepos={this.props.starredRepos}/>

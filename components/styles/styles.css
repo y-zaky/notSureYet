@@ -14,16 +14,17 @@ background-color:#F1F1F1F1;
 }
 
 .basket__container {
-    position: relative;
+    /* position: relative; */
+    text-align: center;
 }
 
 .basket__counter {
     font-weight: bold;
-    position: absolute;
+    /* position: absolute;
     left: 32px;
     top: 35px;
-    bottom: 35px;
-    margin: 0;
+    bottom: 35px; */
+    /* margin: 0; */
 }
 
 .basketPreview__repoContianer {
