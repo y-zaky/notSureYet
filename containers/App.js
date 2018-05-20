@@ -35,6 +35,7 @@ class App extends Component {
 
     this.filterLanguage = this.filterLanguage.bind(this)
     this.starRepo = this.starRepo.bind(this)
+    this.unStarRepo = this.unStarRepo.bind(this)
   }
 
   filterLanguage (language) {
@@ -74,7 +75,7 @@ class App extends Component {
 
  
 
-  render () {    
+  render () {   
     const { error, isLoaded, repos, renderedRepos } = this.props
     if (!isLoaded) return <Loading />
     else if (error) return <h1>Sorry there has been an Error. Message: {error}</h1>
