@@ -83,11 +83,14 @@ class App extends Component {
       return (
         <div>
           <div className="nav__container">
-            <h1>Whats Poppin?</h1>
+            <h1 className="title">Whats Poppin?</h1>
             <PopBasket starredRepos={this.props.starredRepos}/>
           </div>
+          <p className="catchphrase">find the most POPPIN' repos of the last 7 days</p>
           <FilterDropdown filterLanguage={this.filterLanguage}  data={repos} />
-          <RepoList unStarRepo={this.unStarRepo} starRepo={this.starRepo} data={renderedRepos} />
+          <div className="repoList__container">
+           <RepoList unStarRepo={this.unStarRepo} starRepo={this.starRepo} data={renderedRepos} />
+          </div>
         </div>
       )
     }

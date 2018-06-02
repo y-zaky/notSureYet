@@ -32,14 +32,16 @@ export default class FilterDropdown extends Component {
         (allLanguages, currentLanguage)  => {
           allLanguages.push({
             value: currentLanguage,
-            label: currentLanguage
+            label: currentLanguage,
+            className: 'dropdown--item'
           })
           return allLanguages
         }, []
       )
     languageDropdownObj.unshift({
       value: "Select All",
-      label: "Select All"
+      label: "Select All",
+      className: 'dropdown--item'
     })
     return languageDropdownObj
   }
