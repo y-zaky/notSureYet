@@ -86,7 +86,7 @@ class App extends Component {
             <h1 className="title">Whats Poppin?</h1>
             <PopBasket starredRepos={this.props.starredRepos}/>
           </div>
-          <p className="catchphrase">find the most POPPIN' repos of the last 7 days</p>
+          <p className="catchphrase">find the and save the most POPPIN' github repos of the last 7 days</p>
           <FilterDropdown filterLanguage={this.filterLanguage}  data={repos} />
           <div className="repoList__container">
            <RepoList unStarRepo={this.unStarRepo} starRepo={this.starRepo} data={renderedRepos} />
