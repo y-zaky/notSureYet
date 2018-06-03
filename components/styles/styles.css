@@ -20,7 +20,7 @@ body {
 
 .nav__container{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .basket__popcornImage {
@@ -82,7 +82,9 @@ body {
 }
 
 .Select{
-    width: 40%;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .Select input{
@@ -136,7 +138,7 @@ body {
 
 .repoList__container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
     /* background-image: url(../popcorn.png); */
     background-position: center;
@@ -158,17 +160,10 @@ body {
 }
 
 .repolist__item{
-    /* display: flex;
-    justify-content: space-between;
-    list-style-type: none;
-    margin-top:50px;
-    margin-bottom: 50px;
-    padding-top: 20px;
-    border: 2px dotted rgb(168, 2, 2); */
     list-style: none;
     padding: 20px;
     border: solid 0.5vw black;
-    width: 400px;
+    width: 100%;
     border-radius: 0.3rem;
     text-align: center;
 }
@@ -188,11 +183,18 @@ li {
     border-style: solid;
     border-width: 0.5vw;
     border-color: black;
-    width: 400px;
+    width: 100%;
     border-radius: 0.3rem;
     text-align: center;
     background-color: floralwhite;
  }
+
+ @media only screen and (min-width: 915px) {
+    /* For desktop: */
+    .repolist__item {width: 400px;}
+    .repolist__item--starred {width: 400px;}
+    .Select {width: 700px;}
+}
 
 
 @keyframes pop {
