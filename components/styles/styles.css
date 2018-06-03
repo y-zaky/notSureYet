@@ -3,7 +3,7 @@
 }
 
 body {
-    background-color: lightgrey;
+    background-color: floralwhite;
 }
 
 .title {
@@ -40,12 +40,6 @@ body {
 .basket__counter {
     font-family: 'Press Start 2P', cursive;
     color:rgb(168, 2, 2);
-
-    /* position: absolute;
-    left: 32px;
-    top: 35px;
-    bottom: 35px; */
-    /* margin: 0; */
 }
 
 .basketPreview__repoContianer {
@@ -144,7 +138,6 @@ body {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    /* background-image: url(../popcorn.png); */
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -170,6 +163,7 @@ body {
     width: 100%;
     border-radius: 0.3rem;
     text-align: center;
+    cursor: pointer;
 }
 
 .repolist__item:hover {
@@ -190,7 +184,8 @@ li {
     width: 100%;
     border-radius: 0.3rem;
     text-align: center;
-    background-color: floralwhite;
+    background-color: lightgrey;
+    cursor: pointer;
  }
 
  @media only screen and (min-width: 915px) {
