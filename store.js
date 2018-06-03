@@ -9,4 +9,4 @@ const persistedState = loadState()
 
 const middleware = applyMiddleware(thunk)
 
-export default createStore(rootReducer, composeWithDevTools(middleware))
+export default createStore(rootReducer, persistedState, composeWithDevTools(middleware))
