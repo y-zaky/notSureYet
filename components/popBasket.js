@@ -19,12 +19,10 @@ export default class PopBasket extends Component {
     }
 
     handleMouseHover () {
-        console.log(this.toggleHoverState)
         this.setState(this.toggleHoverState)
     }
 
     toggleHoverState (state) {
-        console.log('hi')
         return {
             isHovering: !state.isHovering
         }

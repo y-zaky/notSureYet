@@ -35,7 +35,7 @@ export default (state = initialState, action) => {
     case UNSTAR_REPO:
       return {
         ...state,
-        starredRepos: state.starredRepos.filter( repo => repo != action.payload )
+        starredRepos: state.starredRepos.filter( repo => repo.id != action.payload.id )
       }
     case FILTER_REPOS:
       if (action.payload === "Select All") {

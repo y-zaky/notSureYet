@@ -39,11 +39,7 @@ class App extends Component {
   }
 
   filterLanguage (language) {
-    console.log('filter Language called with language:', language.value)
-    //TO DO - Create saving via local storage/ or via api ?
-    // CSS for basket previews, and when you click it a new page opens. 
-    // add animation everytime someone stars repo.
-    
+    console.log('filter Language called with language:', language.value)   
     this.props.filterRepos(language.value)
   }
 
