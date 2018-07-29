@@ -13,10 +13,20 @@ export const loadState = () => {
 
 export const saveState = (state) => {
   try {
-    const serializedState = JSON.stringify(state)
-    localStorage.setItem('state', serializedState)
+    // console.log('state', state)
+    // const serializedState = JSON.stringify(state)
+
+    // fetch("http://localhost:1234/get")
+    fetch("http://localhost:1234/save", {
+      method:'POST'
+    })
+    .then(res => res.json() )
+    .then( res => console.log('server res', res ) )
+
+    // localStorage.setItem('state', serializedState)
   }
   catch (err){
     // ignore write errors
+    console.log('fetch err',err)
   }
 }

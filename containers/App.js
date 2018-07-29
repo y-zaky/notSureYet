@@ -74,7 +74,7 @@ class App extends Component {
   render () {   
     const { error, isLoaded, repos, renderedRepos } = this.props
     if (!isLoaded) return <Loading />
-    else if (error) return <h1>Sorry there has been an Error. Message: {error}</h1>
+    // else if (error) return <h1>Sorry there has been an Error. Message: {error}</h1>
     else {
       return (
         <div>
