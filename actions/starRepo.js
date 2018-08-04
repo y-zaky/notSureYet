@@ -20,10 +20,6 @@ const saveRepoInDb = (repo) => (
 
 export const starRepo = (repo) => {
     repo.isStarred = true
-    // return {
-    //     type: STAR_REPO,
-    //     payload: repo
-    // }
 
     return (dispatch, getState) => {
         const state = getState()
