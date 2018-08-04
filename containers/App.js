@@ -67,11 +67,13 @@ class App extends Component {
     }
       //1.1 seconds for users to see loading.
       setTimeout( getData, 1100)
+      //TODO Add getBasketData function, when app loads call the DB to check saved stuff. 
   }
 
  
 
-  render () {   
+  render () {  
+    console.log('state',this.props) 
     const { error, isLoaded, repos, renderedRepos } = this.props
     if (!isLoaded) return <Loading />
     // else if (error) return <h1>Sorry there has been an Error. Message: {error}</h1>
