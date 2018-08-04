@@ -8,6 +8,8 @@
 
  * Unrelated to this repo, but need to figure out where/.how to host the server ; (whatsapp-poppin server repo)
 
- 
+ * toDO : check Im getting correct body in backend from each req (find req.body). Then get that to insert intop the DB. 
+
+
 
 
