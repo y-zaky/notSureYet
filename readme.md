@@ -21,5 +21,8 @@
         body: reponame
     }
 
+ * A thunk is a function that returns a function, like a closure, but has a dispatch method and a getState method that can be used to control when you dispatch actions. By default, Redux action creators do not support Asynchronus code, but with Thunk, it becomes posssible. 
+ 
+
 
 
