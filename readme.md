@@ -8,8 +8,18 @@
 
  * Unrelated to this repo, but need to figure out where/.how to host the server ; (whatsapp-poppin server repo)
 
- * toDO : check Im getting correct body in backend from each req (find req.body). Then get that to insert intop the DB. 
+ * toDO : Get Data from posts into the DB. Figure out why /save is getting hit twice on every click. 
 
+
+### What I learned (Started this a bit late... 5/8/18)
+
+ * When making a fetch/post, *ORDER COUNTS!!!*. I spent ages figuring out why req.body on the backend was an empty object, only to notice that I had put the body property before the headers property...... when the correct format is : {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: reponame
+    }
 
 
 
